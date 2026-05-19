@@ -348,6 +348,13 @@
       font-size: 2rem;
       margin-bottom: 1rem;
     }
+    
+    .service-item img, .project-card img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+    }
 
     .tech-stack {
       margin-top: 1rem;
@@ -424,6 +431,15 @@
       justify-content: center;
       color: #2563eb;
     }
+    
+    .contact-detail-item a {
+      text-decoration: none;
+      color: #0f172a;
+    }
+    
+    .contact-detail-item a:hover {
+      color: #2563eb;
+    }
 
     footer {
       background: #0f172a;
@@ -431,6 +447,42 @@
       text-align: center;
       padding: 2rem;
       font-size: 0.85rem;
+    }
+
+    /* Scroll to Top Button */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    }
+    
+    .scroll-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .scroll-top:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    }
+    
+    .scroll-top i {
+      font-size: 1.4rem;
     }
 
     /* Hero image responsive */
@@ -482,6 +534,12 @@
         display: inline-block;
         margin: 0.5rem;
       }
+      .scroll-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -506,8 +564,8 @@
 
 <nav class="navbar">
   <div class="container nav-flex">
-    <a href="index.html">
-    <div class="logo">Kalyan | Telugu WebTech</div>
+    <a href="index.html" style="text-decoration: none;">
+      <div class="logo">Kalyan | Telugu WebTech</div>
     </a>
     <div class="hamburger" id="hamburger">
       <i class="fas fa-bars"></i>
@@ -518,7 +576,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="https://github.com/TeluguWebTech?tab=repositories" target="_blank">github</a></li>
+      <li><a href="https://github.com/TeluguWebTech?tab=repositories" target="_blank">GitHub</a></li>
       <li><a href="#mentorship">Mentorship</a></li>
       <li><a href="#youtube-content" class="youtube-nav"><i class="fab fa-youtube"></i> YouTube</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -527,7 +585,7 @@
   </div>
 </nav>
 
-<!-- HERO SECTION - Trainer First with MERN Mastery Highlight -->
+<!-- HERO SECTION -->
 <section id="home" class="hero">
   <div class="container hero-grid">
     <div class="hero-content">
@@ -547,14 +605,14 @@
     </div>
     <div class="hero-image" style="margin-bottom: 100px;">
       <div style="background: linear-gradient(145deg, #2563eb08, #7c3aed08); border-radius: 42% 58% 70% 30% / 44% 30% 70% 56%; padding: 20px;">
-       <img src="./assets/banner.png" alt="">
+        <img src="./assets/banner.png" alt="">
         <i class="fas fa-person-chalkboard" style="font-size: 8rem; color:#2563eb70;"></i>
       </div>
     </div>
   </div>
 </section>
 
-<!-- About Section with MERN Mastery -->
+<!-- About Section -->
 <section id="about">
   <div class="container">
     <div class="section-header">
@@ -593,7 +651,7 @@
   </div>
 </section>
 
-<!-- Skills Section with Mastery Tags -->
+<!-- Skills Section -->
 <section id="skills">
   <div class="container">
     <div class="section-header">
@@ -601,12 +659,10 @@
       <div class="underline"></div>
     </div>
     <div class="skills-grid">
-      <div class="skill-card"><h3>Front-End <span class="expert-badge">Expert</span></h3><div class="skill-list"><span class="skill-tag master-tag">React JS ★</span><span class="skill-tag">Redux</span>
-        <span class="skill-tag">Zustand</span>
-        <span class="skill-tag">HTML5/CSS3</span><span class="skill-tag">JS (ES6+)</span><span class="skill-tag">Tailwind/Bootstrap/MUI</span><span class="skill-tag">Responsive Design</span></div></div>
+      <div class="skill-card"><h3>Front-End <span class="expert-badge">Expert</span></h3><div class="skill-list"><span class="skill-tag master-tag">React JS ★</span><span class="skill-tag">Redux</span><span class="skill-tag">Zustand</span><span class="skill-tag">HTML5/CSS3</span><span class="skill-tag">JS (ES6+)</span><span class="skill-tag">Tailwind/Bootstrap/MUI</span><span class="skill-tag">Responsive Design</span></div></div>
       <div class="skill-card"><h3>Back-End <span class="expert-badge">Master</span></h3><div class="skill-list"><span class="skill-tag master-tag">Node.js ★</span><span class="skill-tag master-tag">Express.js ★</span><span class="skill-tag">REST APIs</span><span class="skill-tag">JWT Auth</span><span class="skill-tag">Microservices</span></div></div>
-      <div class="skill-card"><h3>Database <span class="expert-badge">Pro</span></h3><div class="skill-list"><span class="skill-tag master-tag">MongoDB ★</span><span class="skill-tag">MySQL</span><span class="skill-tag">Mongoose ODM</span><span class="skill-tag">Aggregation</span></div></div>
-      <div class="skill-card"><h3>DevOps & Cloud</h3><div class="skill-list"><span class="skill-tag">Docker</span><span class="skill-tag">AWS EC2</span><span class="skill-tag">Nginx</span><span class="skill-tag">Git/GitHub</span><span class="skill-tag">Linux</span></div></div>
+      <div class="skill-card"><h3>Database <span class="expert-badge">Pro</span></h3><div class="skill-list"><span class="skill-tag master-tag">MongoDB ★</span><span class="skill-tag">MySQL</span><span class="skill-tag">Mongoose ODM</span><span class="skill-tag">PostgreSQL</span></div></div>
+      <div class="skill-card"><h3>DevOps & Cloud</h3><div class="skill-list"><span class="skill-tag">Docker</span><span class="skill-tag">Nginx</span><span class="skill-tag">AWS Deployment</span></div></div>
       <div class="skill-card"><h3>Java Ecosystem</h3><div class="skill-list"><span class="skill-tag">Java</span><span class="skill-tag">Spring Boot</span><span class="skill-tag">Hibernate</span><span class="skill-tag">Maven</span><span class="skill-tag">Kafka</span></div></div>
     </div>
   </div>
@@ -630,7 +686,7 @@
   </div>
 </section>
 
-<!-- Projects section as Live Training Projects with Nav Links -->
+<!-- Projects section -->
 <section id="projects">
   <div class="container">
     <div class="section-header">
@@ -644,28 +700,24 @@
         <h3>Full-Stack Grocery Mgmt System</h3>
         <p>Capstone MERN project: JWT auth, product CRUD, admin dashboard, image uploads. Teaches full-stack integration and role-based access.</p>
         <div class="tech-stack">React, Node, Express, MongoDB, JWT</div>
-        <a href="#project-grocery" class="project-link" onclick="alert('📦 Grocery Management System Curriculum:\n\n• User Authentication with JWT\n• Product Management CRUD\n• Admin Dashboard with analytics\n• Image Upload using Multer\n• Responsive React Frontend\n• Full deployment guide'); return false;">📖 View Project Details →</a>
       </div>
       <div class="project-card" id="project-docker">
         <i class="fab fa-docker"></i>
         <h3>Dockerized React Deployment Workshop</h3>
         <p>Create production Docker image, Nginx config, deploy on AWS EC2. Real DevOps training module.</p>
         <div class="tech-stack">Docker, AWS, Nginx, React</div>
-        <a href="#project-docker" class="project-link" onclick="alert('🐳 Docker Deployment Workshop:\n\n• Dockerfile creation for React apps\n• Multi-stage builds optimization\n• Nginx configuration for SPA\n• AWS EC2 instance setup\n• Security groups & port mapping\n• CI/CD with GitHub Actions'); return false;">📖 View Workshop Details →</a>
       </div>
       <div class="project-card" id="project-dashboard">
         <i class="fas fa-chart-line"></i>
         <h3>Enterprise Admin Dashboard (React)</h3>
         <p>Component architecture, API integration, data visualisation, reusable UI library – real enterprise pattern.</p>
         <div class="tech-stack">React, Redux Toolkit, Chart.js, Tailwind</div>
-        <a href="#project-dashboard" class="project-link" onclick="alert('📊 Enterprise Dashboard Curriculum:\n\n• Reusable component library\n• Redux state management\n• Chart.js data visualizations\n• REST API integration\n• Role-based routing\n• Dark/light theme implementation'); return false;">📖 View Dashboard Details →</a>
       </div>
       <div class="project-card" id="project-placement">
         <i class="fas fa-graduation-cap"></i>
         <h3>Student Placement Portal (MERN)</h3>
         <p>Full-stack application for managing student profiles, job listings and admin analytics – used as live training project.</p>
         <div class="tech-stack">MERN, JWT, Material UI, Cloudinary</div>
-        <a href="#project-placement" class="project-link" onclick="alert('🎓 Placement Portal Curriculum:\n\n• Student & Recruiter profiles\n• Job posting & application system\n• Resume upload (Cloudinary)\n• Admin analytics dashboard\n• Email notifications\n• Interview scheduling module'); return false;">📖 View Portal Details →</a>
       </div>
     </div>
   </div>
@@ -735,30 +787,20 @@
         <h3 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 1.5rem; color: #0f172a;">🔥 Top Playlists & Courses</h3>
         <div class="services-list" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));">
             <div class="service-item">
-                <img src="./assets/micro.png" alt="">
                 <h3>MERN Microservices with Kafka</h3><p>Build scalable microservices using Node.js, MongoDB, and Apache Kafka. Complete series in Telugu.</p><div class="tech-stack"><a href="https://www.youtube.com/playlist?list=PLZca26lQcxToh6F1OxINkuOxnLSAh5ejC" target="_blank" style="color: #2563eb;">📺 View Playlist →</a></div></div>
             <div class="service-item">
-                <img src="./assets/grocery.png" alt="">
                 <h3>MERN Grocery Project</h3><p>Complete Full-Stack grocery management system using React, Node, Express, MongoDB. Project-based learning.</p><div class="tech-stack"><a href="https://www.youtube.com/playlist?list=PLZca26lQcxTo3c3P5-lodmUPgYyrYMNt4" target="_blank" style="color: #2563eb;">📺 View Playlist →</a></div></div>
             <div class="service-item">
-                <img src="./assets/react.png" alt="">
                 <h3>React Tutorial</h3><p>Learn the latest React, hooks, and component architecture from scratch in Telugu.</p><div class="tech-stack"><a href="https://www.youtube.com/playlist?list=PLZca26lQcxTrsL0mhF2kA58PtwM-gXu_E" target="_blank" style="color: #2563eb;">📺 View Playlist →</a></div></div>
             <div class="service-item">
-                <img src="./assets/django.png" alt="">
                 <h3>Django + React Ticket Booking</h3><p>Full-stack bus ticket booking app using Django REST Framework & React. Real-world integration project.</p><div class="tech-stack"><a href="https://www.youtube.com/playlist?list=PLZca26lQcxTrkbKz5vGOICSDghvmzoNrM" target="_blank" style="color: #2563eb;">📺 View Playlist →</a></div></div>
             <div class="service-item">
-                <img src="./assets/dsa.png" alt="">
                 <h3>Java DSA in Telugu</h3><p>Master Data Structures & Algorithms with Java. Perfect for coding interviews and placements.</p><div class="tech-stack"><a href="https://www.youtube.com/playlist?list=PLZca26lQcxTrkUG5dQe2sgLiaO9qVwRsm" target="_blank" style="color: #2563eb;">📺 View Playlist →</a></div></div>
-            <!-- <div class="service-item">
-                <img src="./assets/js.png" alt="">
-                <h3>JavaScript Tutorials (Full Course)</h3><p>55+ videos covering JS basics to advanced ES6 concepts – foundation for React & Node.js.</p><div class="tech-stack"><a href="https://www.youtube.com/playlist?list=PLVj6kSUNLslWc7I7-5u_-w7UyXR3g7uA7" target="_blank" style="color: #2563eb;">📺 View Playlist →</a></div></div> -->
             <div class="service-item">
-                <img src="./assets/docker.png" alt="">
                 <h3>Docker Practicals in Telugu</h3><p>Hands-on Docker tutorials: containerization, images, Docker Compose, and deployment basics.</p><div class="tech-stack"><a href="https://www.youtube.com/playlist?list=PLZca26lQcxTo7p2ZRAPg60oTW68gIrY0N" target="_blank" style="color: #2563eb;">📺 View Playlist →</a></div></div>
-            <!-- <div class="service-item"><i class="fab fa-css3-alt"></i><h3>CSS & HTML Full Course</h3><p>Master responsive web design with complete HTML5 & CSS3 tutorials in Telugu (42+ videos).</p><div class="tech-stack"><a href="https://www.youtube.com/playlist?list=PLVj6kSUNLslX9Hkra0kliZkMpqPKKlCoA" target="_blank" style="color: #2563eb;">📺 View Playlist →</a></div></div> -->
         </div>
         <div style="text-align: center; margin-top: 3rem;">
-            <a href="https://www.youtube.com/@teluguwebtechtutorials/playlists" target="_blank" class="btn-outline" style="padding: 0.8rem 2rem;">
+            <a href="https://www.youtube.com/@teluguwebtechtutorials/videos" target="_blank" class="btn-outline" style="padding: 0.8rem 2rem;">
                 <i class="fab fa-youtube"></i> Explore All 400+ Tutorial Videos
             </a>
         </div>
@@ -801,28 +843,25 @@
         <h3>Transform your learners into job‑ready developers</h3>
         <p style="margin: 1rem 0 2rem 0;">Looking for a dedicated Full Stack Trainer for your institute, corporate team, or online program? Let's discuss a custom training curriculum that delivers results.</p>
         <div class="contact-detail-item"><i class="fas fa-phone-alt"></i> <span>+91 8978279621</span></div>
-        <a href="https://github.com/TeluguWebTech?tab=repositories">
-
+        <a href="https://github.com/TeluguWebTech?tab=repositories" target="_blank" style="text-decoration: none;">
             <div class="contact-detail-item"><i class="fab fa-github"></i> <span>github.com/TeluguWebTech</span></div>
         </a>
         <div class="contact-detail-item"><i class="fas fa-map-marker-alt"></i> <span>Hyderabad, India</span></div>
         <div class="contact-detail-item"><i class="fas fa-envelope"></i> <span>kalyan.react@gmail.com</span></div>
       </div>
-      <!-- <div style="flex:1; background:#f1f5f9; border-radius: 1.5rem; padding: 1.8rem;">
-        <h3>Request Training Consultation</h3>
-        <input type="text" placeholder="Full Name" style="width:100%; margin: 0.8rem 0; padding: 0.8rem; border-radius: 2rem; border:1px solid #cbd5e1;"><br>
-        <input type="email" placeholder="Institute / Company Email" style="width:100%; margin: 0.8rem 0; padding: 0.8rem; border-radius: 2rem; border:1px solid #cbd5e1;"><br>
-        <textarea placeholder="Tell me about your training needs (batch size, topics, duration)..." rows="3" style="width:100%; border-radius: 1.5rem; padding:0.8rem; border:1px solid #cbd5e1;"></textarea>
-        <button class="btn-primary" style="margin-top:1rem; width:100%;">Discuss Training Plan →</button>
-      </div> -->
     </div>
   </div>
 </section>
 
 <footer>
   <p>© 2025 Kalyan — MERN Full Stack Master & Technical Trainer | Building job-ready engineers with MERN, DevOps & real-world projects</p>
-  <p style="margin-top: 0.5rem;"><i class="fab fa-youtube" style="color:#f97316;"></i> Telugu WebTech Channel · <i class="fas fa-heart" style="color:#f97316;"></i> Hyderabad, India</p>
+  <p style="margin-top: 0.5rem;"><i class="fab fa-youtube" style="color:#f97316;"></i> Telugu WebTech Channel · <i class="fas fa-map-marker-alt" style="color:#f97316;"></i> Hyderabad, India</p>
 </footer>
+
+<!-- Scroll to Top Button -->
+<div class="scroll-top" id="scrollTopBtn">
+  <i class="fas fa-arrow-up"></i>
+</div>
 
 <script>
   // Hamburger menu toggle
@@ -849,6 +888,24 @@
       const icon = hamburger.querySelector('i');
       icon.classList.remove('fa-times');
       icon.classList.add('fa-bars');
+    });
+  });
+  
+  // Scroll to Top Button Logic
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollTopBtn.classList.add('show');
+    } else {
+      scrollTopBtn.classList.remove('show');
+    }
+  });
+  
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
   });
 </script>
